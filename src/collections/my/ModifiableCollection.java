@@ -6,6 +6,7 @@ import org.omg.CORBA.Object;
 import java.util.AbstractCollection;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.Objects;
 
 
 public class ModifiableCollection<T> extends AbstractCollection<T> {
@@ -41,10 +42,16 @@ public class ModifiableCollection<T> extends AbstractCollection<T> {
         return new BasicIterator();
     }
 
-
     @Override
     public int size() {
         return data.length;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(size);
+        result = 31 * result + Arrays.hashCode(data);
+        return result;
     }
 
     private class BasicIterator<T> implements Iterator<T> {

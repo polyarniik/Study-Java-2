@@ -71,7 +71,7 @@ public class MyNavigableSet<T> extends AbstractSet<T> implements NavigableSet<T>
     /**
      * Returns the greatest element in this set less than or equal to the given element, or null if there is no such element.
      *
-     * @param el
+     * @param t
      * @return T
      */
     @Override
@@ -85,7 +85,7 @@ public class MyNavigableSet<T> extends AbstractSet<T> implements NavigableSet<T>
     /**
      * Returns the least element in this set greater than or equal to the given element, or null if there is no such element.
      *
-     * @param el
+     * @param t
      * @return T
      */
     @Override
@@ -98,8 +98,7 @@ public class MyNavigableSet<T> extends AbstractSet<T> implements NavigableSet<T>
     }
     /**
      * Returns the least element in this set strictly greater than the given element, or null if there is no such element.
-     *
-     * @param el
+     * @param t
      * @return T
      */
     @Override
