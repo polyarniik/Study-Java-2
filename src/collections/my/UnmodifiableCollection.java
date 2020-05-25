@@ -1,7 +1,6 @@
 package collections.my;
 
 import collections.iterator.EndlessArrayIterator;
-
 import java.util.AbstractCollection;
 import java.util.Arrays;
 import java.util.Iterator;

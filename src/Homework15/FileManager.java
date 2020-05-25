@@ -57,6 +57,9 @@ public class FileManager {
         if (request.matches("^\\s*copy\\s[\\sa-zA-zà-ÿÀ-ÿ0-9~.\\-\\\\]+to\\s[\\sa-zA-zà-ÿÀ-ÿ0-9~.\\-\\\\]+")) {
             return new Copy();
         }
+        if (request.matches("^\\s*cat\\s[\\sa-zA-zà-ÿÀ-ÿ0-9~.\\-\\\\]+")) {
+            return new Cat();
+        }
         return new AbsolutePath();
     }
 
