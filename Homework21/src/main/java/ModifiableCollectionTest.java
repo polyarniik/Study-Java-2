@@ -29,11 +29,19 @@ public class ModifiableCollectionTest {
     @Test
     public void testAdd() {
         Assert.assertTrue(coll.add(78));
+        Assert.assertEquals(5, coll.size());
     }
 
     @Test
     public void testIteratorHasNext() {
         Assert.assertTrue(coll.iterator().hasNext());
+        Assert.assertTrue(coll.iterator().hasNext());
+    }
+
+    @Test
+    public void testRemove() {
+        coll.iterator().remove();
+        Assert.assertEquals(3, coll.size());
     }
 
     @Test
@@ -45,6 +53,7 @@ public class ModifiableCollectionTest {
         newColl.add(2);
         Assert.assertTrue(coll.equals(newColl));
     }
+
 
     @Test
     public void testNotEquals() {
