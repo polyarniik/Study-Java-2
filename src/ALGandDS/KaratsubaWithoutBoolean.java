@@ -7,18 +7,18 @@ public class KaratsubaWithoutBoolean {
     public static long multiply(long x, long y) {
         int size1 = Long.toString(x).length();
         int size2 = Long.toString(y).length();
-        int N = Math.max(size1, size2);
-        N = (N / 2) + (N % 2);
-        long m = (long) Math.pow(10, N);
+        int n = Math.max(size1, size2);
+        if (n < 3) return x * y;
+        n = (n / 2) + (n % 2);
+        long m = (long) Math.pow(10, n);
         long a = x / m;
-        long b = x - (a * m);
+        long b = x % m;
         long c = y / m;
-        long d = y - (c * N);
-        long member1 = multiply(b, d);
-        long member2 = multiply(b + a, d + c);
-        long member3 = multiply(a, c);
-
-        return member1 + ((member2 - member1 - member3) * m) + (member3 * (long) (Math.pow(10, 2 * N)));
+        long d = y % m;
+        long member1 = multiply(a, c);
+        long member2 = multiply(a + b, c + d);
+        long member3 = multiply(b, d);
+        return member1*m*m + (member2 - member1 - member3)*m + member3;
     }
 
     public static void main(String[] args) {
